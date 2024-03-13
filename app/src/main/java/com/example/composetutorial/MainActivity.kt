@@ -1,6 +1,7 @@
 package com.example.composetutorial
 
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,31 +17,19 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposeTutorialTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                    MessageCard("Android")
                 }
-            }
-        }
+
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun MessageCard(name: String) {
+    Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
-fun GreetingPreview() {
-    ComposeTutorialTheme {
-        Greeting("Android")
-    }
+fun PreviewMessageCard() {
+    MessageCard("Android")
 }
